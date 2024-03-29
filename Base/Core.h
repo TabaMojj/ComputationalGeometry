@@ -18,6 +18,6 @@ static bool isEqualID(double x, double y){
     return fabs(x-y) < TOLERANCE;
 }
 
-enum class RELATIVE_POSITION {
+enum RELATIVE_POSITION {
     LEFT, RIGHT, BEHIND, BEYOND, BETWEEN, ORIGIN, DESTINATION
 };
