@@ -24,20 +24,23 @@ namespace CG{
             point = p1;
         }
 
-        Vector<coordinate_type, dim> getPoint();
+        Vector<coordinate_type, dim> getPoint() const;
 
-        Vector<coordinate_type, dim> getDir();
+        Vector<coordinate_type, dim> getDir() const;
 
 
     };
 
+    typedef Line<float, DIM2> Line2d;
+    typedef Line<float, DIM3> Line3d;
+
     template<class coordinate_type, size_t dim>
-    inline Vector<coordinate_type, dim> Line<coordinate_type, dim>::getDir() {
+    inline Vector<coordinate_type, dim> Line<coordinate_type, dim>::getDir() const {
         return dir;
     }
 
     template<class coordinate_type, size_t dim>
-    inline Vector<coordinate_type, dim> Line<coordinate_type, dim>::getPoint() {
+    inline Vector<coordinate_type, dim> Line<coordinate_type, dim>::getPoint() const {
         return point;
     }
 }
