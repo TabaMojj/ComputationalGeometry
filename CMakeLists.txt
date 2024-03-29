@@ -12,4 +12,6 @@ add_executable(ComputationalGeometry
         Base/GeoUtils.cpp
         Primitive/Line.h
         Primitive/Plane.h
+        Base/Intersection.h
+        Base/Intersection.cpp
 )
