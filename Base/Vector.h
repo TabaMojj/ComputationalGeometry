@@ -53,7 +53,7 @@ namespace CG {
 
         coordinate_type operator[](int) const;
 
-        void assign(int dim, coordinate_type value);
+        void assign(const unsigned int _index, coordinate_type value);
 
         float magnitude() const;
 
@@ -147,13 +147,12 @@ namespace CG {
     }
 
     template<class coordinate_type, size_t dimension>
-    inline void Vector<coordinate_type, dimension>::assign(int dim, coordinate_type value) {
-        if(dim >= coords.size()){
+    inline void Vector<coordinate_type, dimension>::assign(const unsigned int _index, coordinate_type value) {
+        if(_index >= coords.size()){
             std::cout << "Index out of bound \n";
-            return coordinate_type();
         }
-        coords[dim] = value;
-    }
+        coords[_index] = value;
+   }
 
     template<class coordinate_type, size_t dimension>
     float dotProduct(const Vector<coordinate_type, dimension> &v1, const Vector<coordinate_type, dimension> &v2){
