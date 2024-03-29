@@ -39,5 +39,5 @@ int CG::orientation2D(const CG::Point2d &a, const CG::Point2d &b, const CG::Poin
     if (b == c)
         return DESTINATION;
 
-    return BEYOND;
+    return BETWEEN;
 }
