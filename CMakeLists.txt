@@ -10,4 +10,5 @@ add_executable(ComputationalGeometry
         Base/GeoUtils.h
         Primitive/Point.h
         Base/GeoUtils.cpp
+        Primitive/Line.h
 )
