@@ -4,6 +4,7 @@
 #pragma once
 #include "../Primitive/Point.h"
 #include "../Primitive/Line.h"
+#include "../Primitive/Plane.h"
 
 #ifndef COMPUTATIONALGEOMETRY_INTERSECTION_H
 #define COMPUTATIONALGEOMETRY_INTERSECTION_H
@@ -17,5 +18,9 @@ namespace CG {
     bool Intersection(const Point2d &a, const Point2d &b, const Point2d &c, const Point2d &d, Point2d &intersection);
 
     bool Intersection(const Line2d &l1, const Line2d &l2, Point2d &intersection);
+
+    bool Intersection(const Line3d &line, const Planef &plane, Point3d &point);
+
+    bool Intersection(const Planef &p1, Planef &p2, Line3d l);
 
 }

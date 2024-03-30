@@ -50,3 +50,42 @@ bool CG::Intersection(const CG::Line2d &l1, const CG::Line2d &l2, CG::Point2d &i
     auto l2_end = l2_start + l2.getDir();
     return Intersection(l1_start, l1_end, l2_start, l2_end, intersection);
 }
+
+bool CG::Intersection(const CG::Line3d &line, const CG::Planef &plane,  CG::Point3d &point) {
+    auto n = plane.getNormal();
+    auto D = plane.getD();
+    auto d = line.getDir();
+    auto p = line.getPoint();
+    auto nd = dotProduct(n, d);
+
+    if (!isEqualID(nd, 0)) {
+        auto t = (-1 * dotProduct(n, p) + D) /nd;
+        point.assign(X, p[X] + t * d[X]);
+        point.assign(Y, p[Y] + t * d[Y]);
+        point.assign(Z, p[Z] + t * d[Z]);
+        return true;
+    }
+    else{
+        return false;
+    }
+}
+
+bool CG::Intersection(const CG::Planef &p1, CG::Planef &p2, CG::Line3d l) {
+    auto n1 = p1.getNormal();
+    auto n2 = p2.getNormal();
+    auto d1 = p1.getD();
+    auto d2 = p2.getD();
+    auto direction = crossProduct3D(n1, n2);
+    if(isEqualID(direction.magnitude(), 0))
+        return false;
+    auto n1n2 = dotProduct(n1, n2);
+    auto n1n2_2 = n1n2 * n1n2;
+    auto a = (d2 * n1n2 - d1) / (n1n2_2 - 1);
+    auto b = (d1 * n1n2 - d2) / (n1n2_2 - 1);
+    auto point = n1 * a + n2 * b;
+    l.setPoint(point);
+    direction.normalize();
+    l.setDirection(direction);
+    return true;
+
+}
