@@ -171,4 +171,5 @@ namespace CG {
 
     Vector3f crossProduct3D(Vector3f v1, Vector3f v2);
 
+    float scalarTripleProduct(Vector3f v1, Vector3f v2, Vector3f v3);
 }
