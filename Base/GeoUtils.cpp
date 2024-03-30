@@ -41,3 +41,28 @@ int CG::orientation2D(const CG::Point2d &a, const CG::Point2d &b, const CG::Poin
 
     return BETWEEN;
 }
+
+bool CG::collinear(const CG::Vector3f &a, const CG::Vector3f &b) {
+    auto v1 = a[X] * b[Y] - a[Y] * b[X];
+    auto v2 = a[Y] * b[Z] - a[Z] * b[Y];
+    auto v3 = a[Z] * b[Z] - a[Z] * b[X];
+    return isEqualID(v1, 0) && isEqualID(v2, 0) && isEqualID(v3, 0);
+}
+
+bool CG::collinear(const CG::Point3d &a, const CG::Point3d &b, const CG::Point3d &c) {
+    auto AB = b - a;
+    auto AC = c - a;
+    return collinear(AB, AC);
+}
+
+bool CG::coplanar(const CG::Point3d &a, const CG::Point3d &b, const CG::Point3d &c, const CG::Point3d &d) {
+    auto AB = b - a;
+    auto AC = c - a;
+    auto AD = d - a;
+    return coplanar(AB, AC, AC);
+}
+
+bool CG::coplanar(const CG::Point3d &a, const CG::Point3d &b, const CG::Point3d &c) {
+    float value = scalarTripleProduct(a, b, c);
+    return isEqualID(value, 0);
+}
