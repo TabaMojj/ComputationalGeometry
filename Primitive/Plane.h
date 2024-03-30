@@ -35,6 +35,10 @@ namespace CG {
         Vector3f getNormal() const {
             return normal;
         }
+
+        float getD() const {
+            return d;
+        }
     };
     typedef Plane<float> Planef;
 }

@@ -29,6 +29,9 @@ namespace CG{
 
         Vector<coordinate_type, dim> getDir() const;
 
+        void setDirection(Vector<coordinate_type, dim> &_dir);
+
+        void setPoint(Vector<coordinate_type, dim> &_point);
 
     };
 
@@ -43,5 +46,14 @@ namespace CG{
     template<class coordinate_type, size_t dim>
     inline Vector<coordinate_type, dim> Line<coordinate_type, dim>::getPoint() const {
         return point;
+    }
+
+    template<class coordinate_type, size_t dim>
+    inline void Line<coordinate_type, dim>::setDirection(Vector<coordinate_type, dim> &_dir) {
+        dir = _dir;
+    }
+    template<class coordinate_type, size_t dim>
+    inline void Line<coordinate_type, dim>::setPoint(Vector<coordinate_type, dim> &_point) {
+        point = _point;
     }
 }
