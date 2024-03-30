@@ -14,4 +14,6 @@ add_executable(ComputationalGeometry
         Primitive/Plane.h
         Base/Intersection.h
         Base/Intersection.cpp
+        Base/Angle.h
+        Base/Angle.cpp
 )
