@@ -16,4 +16,6 @@ add_executable(ComputationalGeometry
         Base/Intersection.cpp
         Base/Angle.h
         Base/Angle.cpp
+        Base/Distance.h
+        Base/Distance.cpp
 )
