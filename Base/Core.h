@@ -27,6 +27,10 @@ namespace CG {
         return x ^ y;
     }
 
+    static double RadianceToDegrees(double radiance) {
+        return radiance * 360 / (2 * M_PI);
+    }
+
 }
 
 
