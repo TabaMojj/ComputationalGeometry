@@ -20,14 +20,21 @@ namespace CG {
     public:
         Plane() = default;
 
-        Plane(Vector3f &_normal, float _constant):normal(_normal), d(_constant){}
+        Plane(Vector3f &_normal, float _constant):normal(_normal), d(_constant){
+            normal.normalize();
+        }
 
         Plane(Point3d &_p1, Point3d &_p2, Point3d &_p3) {
             auto v12 = _p2 - _p1;
             auto v13 = _p3 - _p1;
             normal = crossProduct3D(v12, v13);
+            normal.normalize();
             d = dotProduct(normal, _p1);
         }
-    };
 
+        Vector3f getNormal() const {
+            return normal;
+        }
+    };
+    typedef Plane<float> Planef;
 }

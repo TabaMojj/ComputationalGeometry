@@ -21,6 +21,7 @@ namespace CG{
         Line() = default;
         Line(Vector<coordinate_type, dim> &p1, Vector<coordinate_type, dim> &p2) {
             dir = p2 - p1;
+            dir.normalize();
             point = p1;
         }
 
