@@ -4,6 +4,8 @@
 
 #include "GeoUtils.h"
 #include "Core.h"
+#include "Intersection.h"
+
 double CG::areaTriangle2d(const CG::Point2d &a, const CG::Point2d &b, const CG::Point2d &c) {
     auto AB = b - a;
     auto AC = c -  a;
@@ -65,4 +67,42 @@ bool CG::coplanar(const CG::Point3d &a, const CG::Point3d &b, const CG::Point3d 
 bool CG::coplanar(const CG::Point3d &a, const CG::Point3d &b, const CG::Point3d &c) {
     float value = scalarTripleProduct(a, b, c);
     return isEqualID(value, 0);
+}
+
+static bool interiorCheck(const Vertex2D* v1, const Vertex2D* v2)
+{
+    if (CG::leftOrBeyond(v1->point, v1->next->point, v1->prev->point)) {
+        return CG::left(v1->point, v2->point, v1->prev->point) &&
+        CG::left(v2->point, v1->point, v1->next->point);
+    }
+    return !(CG::leftOrBeyond(v1->point, v2->point, v1->next->point) &&
+    CG::leftOrBeyond(v2->point, v1->point, v1->prev->point));
+}
+
+bool CG::isDiagonal(const Vertex2D *v1, const Vertex2D *v2, PolygonS2D *poly) {
+    bool prospect = true;
+    std::vector<Vertex2D*> vertices;
+
+    if(poly)
+        vertices = poly->getVertices();
+    else{
+        auto vertex_ptr = v1->next;
+        vertices.push_back((Vertex2D*)v1);
+        while (vertex_ptr != v1){
+            vertices.push_back(vertex_ptr);
+            vertex_ptr = vertex_ptr->next;
+        }
+    }
+
+    Vertex2D  *current, *next;
+    current = vertices[0];
+    do {
+        next = current->next;
+        if (current != v1 && next != v1 && current != v2 && next != v2 && CG::Intersection(v1->point, v2->point, current->point, next->point)) {
+            prospect = false;
+            break;
+        }
+        current = next;
+    } while (current != vertices[0]);
+    return prospect && interiorCheck(v1, v2) && interiorCheck(v2, v1);
 }
