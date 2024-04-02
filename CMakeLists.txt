@@ -18,4 +18,5 @@ add_executable(ComputationalGeometry
         Base/Angle.cpp
         Base/Distance.h
         Base/Distance.cpp
+        Base/Polygon.h
 )
