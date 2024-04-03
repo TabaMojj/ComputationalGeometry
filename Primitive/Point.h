@@ -5,7 +5,7 @@
 #ifndef COMPUTATIONALGEOMETRY_POINT_H
 #define COMPUTATIONALGEOMETRY_POINT_H
 
-#include "Vector.h"
+#include "../Base/Vector.h"
 
 namespace CG{
     typedef Vector2f Point2D;

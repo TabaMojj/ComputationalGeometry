@@ -5,8 +5,8 @@
 #define COMPUTATIONALGEOMETRY_GEOUTILS_H
 
 #include "../Primitive/Point.h"
-#include "Core.h"
-#include "Polygon.h"
+#include "../Base/Core.h"
+#include "../Primitive/Polygon.h"
 #include "../Primitive/Line.h"
 
 namespace CG {

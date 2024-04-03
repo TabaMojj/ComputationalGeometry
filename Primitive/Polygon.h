@@ -3,7 +3,7 @@
 //
 #pragma once
 #include "../Base/Vector.h"
-#include "../Primitive/Point.h"
+#include "Point.h"
 #include <list>
 #include <vector>
 

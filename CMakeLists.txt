@@ -7,18 +7,18 @@ add_executable(ComputationalGeometry
         Base/Vector.h
         Base/Core.h
         Base/Vector.cpp
-        Base/GeoUtils.h
+        Core/GeoUtils.h
         Primitive/Point.h
-        Base/GeoUtils.cpp
+        Core/GeoUtils.cpp
         Primitive/Line.h
         Primitive/Plane.h
-        Base/Intersection.h
-        Base/Intersection.cpp
-        Base/Angle.h
-        Base/Angle.cpp
-        Base/Distance.h
-        Base/Distance.cpp
-        Base/Polygon.h
+        Core/Intersection.h
+        Core/Intersection.cpp
+        Core/Angle.h
+        Core/Angle.cpp
+        Core/Distance.h
+        Core/Distance.cpp
+        Primitive/Polygon.h
         Primitive/Line.cpp
-        Base/Polygon.cpp
+        Primitive/Polygon.cpp
 )

@@ -3,7 +3,7 @@
 //
 
 #include "GeoUtils.h"
-#include "Core.h"
+#include "../Base/Core.h"
 #include "Intersection.h"
 
 double CG::areaTriangle2D(const Point2D &a, const Point2D &b, const Point2D &c) {
