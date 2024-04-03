@@ -1,13 +1,14 @@
 //
 // Created by mojtaba on 3/29/24.
 //
+#pragma once
 #ifndef COMPUTATIONALGEOMETRY_GEOUTILS_H
 #define COMPUTATIONALGEOMETRY_GEOUTILS_H
 
-#include "../Primitive/Point.h"
-#include "../Base/Core.h"
-#include "../Primitive/Polygon.h"
-#include "../Primitive/Line.h"
+#include "Primitive/Point.h"
+#include "Base/Core.h"
+#include "Primitive/Polygon.h"
+#include "Primitive/Line.h"
 
 namespace CG {
     double areaTriangle2D(const Point2D &a, const Point2D &b, const Point2D &c);

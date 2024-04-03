@@ -6,8 +6,8 @@
 #ifndef COMPUTATIONALGEOMETRY_ANGLE_H
 #define COMPUTATIONALGEOMETRY_ANGLE_H
 
-#include "../Primitive/Line.h"
-#include "../Primitive/Plane.h"
+#include "Primitive/Line.h"
+#include "Primitive/Plane.h"
 
 namespace CG {
 

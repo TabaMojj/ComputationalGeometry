@@ -2,13 +2,13 @@
 // Created by mojtaba on 4/2/24.
 //
 #pragma once
+#ifndef COMPUTATIONALGEOMETRY_POLYGON_H
+#define COMPUTATIONALGEOMETRY_POLYGON_H
+
 #include "../Base/Vector.h"
 #include "Point.h"
 #include <list>
 #include <vector>
-
-#ifndef COMPUTATIONALGEOMETRY_POLYGON_H
-#define COMPUTATIONALGEOMETRY_POLYGON_H
 
 template<class T, size_t dim>
 struct Vertex {

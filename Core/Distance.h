@@ -5,9 +5,9 @@
 #ifndef COMPUTATIONALGEOMETRY_DISTANCE_H
 #define COMPUTATIONALGEOMETRY_DISTANCE_H
 
-#include "../Primitive/Point.h"
-#include "../Primitive/Line.h"
-#include "../Primitive/Plane.h"
+#include "Primitive/Point.h"
+#include "Primitive/Line.h"
+#include "Primitive/Plane.h"
 
 namespace CG {
 

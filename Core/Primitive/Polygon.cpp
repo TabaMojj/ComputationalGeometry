@@ -3,7 +3,7 @@
 //
 
 #include "Polygon.h"
-#include "../Core/GeoUtils.h"
+#include "../GeoUtils.h"
 
 using namespace CG;
 

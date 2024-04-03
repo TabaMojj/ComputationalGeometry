@@ -2,14 +2,11 @@
 // Created by mojtaba on 3/29/24.
 //
 #pragma once
-
-#include "../Base/Vector.h"
-#include "Point.h"
-
 #ifndef COMPUTATIONALGEOMETRY_PLANE_H
 #define COMPUTATIONALGEOMETRY_PLANE_H
 
-#endif //COMPUTATIONALGEOMETRY_PLANE_H
+#include "../Base/Vector.h"
+#include "Point.h"
 
 namespace CG {
     template<class coordinate_type>
@@ -42,3 +39,6 @@ namespace CG {
     };
     typedef Plane<float> Planef;
 }
+
+#endif //COMPUTATIONALGEOMETRY_PLANE_H
+
