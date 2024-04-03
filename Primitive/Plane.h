@@ -24,7 +24,7 @@ namespace CG {
             normal.normalize();
         }
 
-        Plane(Point3d &_p1, Point3d &_p2, Point3d &_p3) {
+        Plane(Point3D &_p1, Point3D &_p2, Point3D &_p3) {
             auto v12 = _p2 - _p1;
             auto v13 = _p3 - _p1;
             normal = crossProduct3D(v12, v13);

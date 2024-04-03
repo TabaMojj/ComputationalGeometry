@@ -19,4 +19,6 @@ add_executable(ComputationalGeometry
         Base/Distance.h
         Base/Distance.cpp
         Base/Polygon.h
+        Primitive/Line.cpp
+        Base/Polygon.cpp
 )

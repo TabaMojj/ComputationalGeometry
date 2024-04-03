@@ -3,19 +3,16 @@
 //
 
 #pragma once
-
-#include <cmath>
-
 #ifndef COMPUTATIONALGEOMETRY_CORE_H
 #define COMPUTATIONALGEOMETRY_CORE_H
 
-#endif //COMPUTATIONALGEOMETRY_CORE_H
+#include <cmath>
 
 namespace CG {
 
-    #define TOLERANCE 0.0000001
+#define TOLERANCE 0.0000001
 
-    static bool isEqualID(double x, double y){
+    static bool isEqualD(double x, double y){
         return fabs(x-y) < TOLERANCE;
     }
 
@@ -33,5 +30,4 @@ namespace CG {
 
 }
 
-
-
+#endif //COMPUTATIONALGEOMETRY_CORE_H

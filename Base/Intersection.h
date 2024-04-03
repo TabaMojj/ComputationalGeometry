@@ -13,14 +13,15 @@
 
 namespace CG {
 
-    bool Intersection(const Point2d &a, const Point2d &b, const Point2d &c, const Point2d &d);
+    bool intersect(CG::Line&, CG::Line&, CG::Point3D&);
 
-    bool Intersection(const Point2d &a, const Point2d &b, const Point2d &c, const Point2d &d, Point2d &intersection);
+    bool intersect(CG::Line2d&,CG::Line2d&, CG::Point2D&);
 
-    bool Intersection(const Line2d &l1, const Line2d &l2, Point2d &intersection);
+    bool intersect(const CG::Point2D&, const CG::Point2D&, const CG::Point2D&, const CG::Point2D&);
 
-    bool Intersection(const Line3d &line, const Planef &plane, Point3d &point);
+    bool intersect(CG::Point2D&, CG::Point2D&, CG::Point2D&, CG::Point2D&, CG::Point2D&);
 
-    bool Intersection(const Planef &p1, Planef &p2, Line3d l);
+    bool intersect(CG::Planef&, CG::Line&, CG::Point3D&);
 
+    bool intersect(CG::Planef&, CG::Planef&, CG::Line&);
 }

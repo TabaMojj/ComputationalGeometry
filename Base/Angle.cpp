@@ -4,25 +4,31 @@
 
 #include "Angle.h"
 
-template <class T, size_t dim>
-static double getAngle(CG::Vector<T, dim> v1, CG::Vector<T, dim> v2){
+template<class T, size_t dimensions >
+static float getAngle(CG::Vector<T, dimensions> v1, CG::Vector<T, dimensions> v2)
+{
     auto dot = dotProduct(v1, v2);
     auto theta = acos(fabs(dot));
     return CG::RadianceToDegrees(theta);
 }
-double CG::AngleLines2D(const CG::Line2d &l1, const CG::Line2d &l2) {
-    return getAngle(l1.getDir(), l2.getDir());
+
+float CG::AngleLines2D(const Line2d& l1, const Line2d l2)
+{
+    return getAngle(l1.direction(), l2.direction());
 }
 
-double CG::AngleLines3D(const CG::Line3d &l1, const CG::Line3d &l2) {
-    return getAngle(l1.getDir(), l2.getDir());
+float CG::AngleLines3D(const Line& l1, const Line& l2)
+{
+    return getAngle(l1.direction(), l2.direction());
 }
 
-double CG::AngleLinePlane(const CG::Line3d &l1, const CG::Planef &p) {
-    auto angle = getAngle(l1.getDir(), p.getNormal());
-    return 90 - angle;
+float CG::AngleLinePlane(const Line& l, const Planef p)
+{
+    auto theta = getAngle(l.direction(), p.getNormal());
+    return 90 - theta;
 }
 
-double CG::AnglePlanes(const CG::Planef &p1, const CG::Planef &p2) {
+float CG::AnglePlanes(const Planef p1, const Planef p2)
+{
     return getAngle(p1.getNormal(), p2.getNormal());
 }
