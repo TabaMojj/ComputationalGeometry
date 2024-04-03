@@ -21,4 +21,6 @@ add_executable(ComputationalGeometry
         Core/Primitive/Polygon.h
         Core/Primitive/Line.cpp
         Core/Primitive/Polygon.cpp
+        Triangulation.cpp
+        Triangulation.h
 )
